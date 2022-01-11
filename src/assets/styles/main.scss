@@ -1,0 +1,70 @@
+@import 'variables.scss';
+
+html {
+  scroll-behavior: smooth;
+  body{
+    font-family: $brand-font;
+    font-weight: 300;
+    color: $brand-green-strong;
+  }
+}
+
+
+#the-navbar{
+  min-height: 80px;
+  nav{
+    min-height: 80px;
+    background-color: $brand-yellow;
+    font-weight: 500;
+    .navbar-brand{
+      font-weight: 600;
+    }
+    *{
+      color: $brand-green-strong;
+    }
+  }
+}
+
+.wrapper{
+  padding: $padding-wrapper-sm;
+  h1{
+    text-align: center;
+    padding: $padding-h1-sm;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+}
+
+#footer{
+  text-align: center;
+  background-color: $brand-yellow;
+  color: $brand-green-strong;
+}
+
+@media (min-width: 481px) {
+  .wrapper{
+    padding: $padding-wrapper-md;
+    h1{
+      padding: $padding-h1-md;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .wrapper{
+    padding: $padding-wrapper-lg;
+  }
+}
+
+@media (min-width: 1201px) {
+  .wrapper{
+    padding: $padding-wrapper-xl;
+    h1{
+      padding: $padding-h1-xl;
+    }
+  }
+}
+
+#header{
+  padding: 0;
+}

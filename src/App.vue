@@ -1,32 +1,48 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
+    <TheAlert :alert="alert" v-if="alert && alert.secs > 0"/>
+    <TheLoader v-if="isLoading"/>
   </div>
 </template>
+<script>
+import TheLoader from '@/components/TheLoader.vue'
+import TheAlert from '@/components/TheAlert.vue'
+import { mapGetters } from 'vuex'
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+export default {
+  name: 'Main',
+  components: {
+    TheAlert,
+    TheLoader
+  },
+  data () {
+    return {
+    }
+  },
+  methods: {
+    init () {
+      window.addEventListener('scroll', function () {
+        var nav = document.getElementById('main-menu')
+        if (document.documentElement.scrollTop > 400) {
+          nav.classList.add('scrolled')
+        } else {
+          nav.classList.remove('scrolled')
+        }
+      })
+    }
+  },
+  mounted () {
+    // this.init()
+  },
+  computed: {
+    ...mapGetters({
+      isLoading: 'getLoaderState',
+      alert: 'getAlert'
+    })
+  }
 }
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+</script>
+<style lang="scss">
+  @import '@/assets/styles/main.scss'
 </style>

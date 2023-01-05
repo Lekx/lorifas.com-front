@@ -1,0 +1,86 @@
+@import './vars.scss';
+
+
+body{
+  background-color: #fff;
+  color: $brand-dark;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+main{
+  padding: 1rem;
+  .comp-wrapper{
+    background-color: $brand-light;
+    box-shadow: 0px 0px 5px -1px rgba(66,66,66,0.75);
+  }
+}
+nav{
+  padding: 1rem;
+  background-color: $brand-dark;
+  color: $brand-yellow;
+  font-size: 1.2rem;
+  .logo-wrapper{
+    position: relative;
+    width: 95px;
+    img{
+      width: 100%;
+      position: absolute;
+      top:0;
+      left:0;
+      cursor: pointer;
+    }
+  }
+  a{
+    border-bottom: 2px solid white;
+    text-decoration: none;
+    margin-left: 25px;
+    color: $brand-pink;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px;
+    &:hover{
+      background: white;
+    }
+  }
+}
+
+// Forms style
+.n-input-number, .n-date-picker{
+  flex-grow: 1;
+}
+
+.raffle-form-comp{
+  max-width: 800px;
+  margin: auto;
+}
+
+.title-with-icon{
+  label{
+    margin-left: 10px;
+  }
+}
+
+.n-popover.n-popover-shared.n-popover-shared--show-arrow{
+  background-color: $brand-dark;
+  color: $brand-light;
+  .n-popover-arrow{
+    background-color: $brand-dark;
+  }
+}
+
+// .n-data-table-th{
+.n-data-table .n-data-table-table{
+  word-break: normal;
+}
+
+.n-dropdown-menu .n-dropdown-divider{
+  background-color: #ccc;
+}
+
+.remove-btn{
+  position: relative;
+  top: 2px;
+  margin: 10px;
+}

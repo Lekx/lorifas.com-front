@@ -1,5 +1,7 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="about comp-wrapper">
+    <n-card title="Acerca de nosotros">
+      Estos es una pagina con el "acerca de"...
+    </n-card>
   </div>
 </template>
